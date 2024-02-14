@@ -8,16 +8,18 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
+
+    <link rel="stylesheet" type="text/css" href="~/css/Style1.css">
+
 </head>
 <body>
     <form asp-controller="Access" asp-action="Login" method="post">
         <h1>Login</h1>
+        <label>Email</label>
         <input type="email" placeholder="Email" asp-for="Email"/>
+        <label>Password</label>
         <input type="password" placeholder="Password" asp-for="PassWord"/>
-
-       <label>
+        <label>
             <input type="checkbox" asp-for="KeepLoggedIn" />
             Keep me logged In.
         </label>
