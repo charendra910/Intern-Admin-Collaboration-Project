@@ -1,27 +1,28 @@
-﻿/* styles.css */
+﻿
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     margin: 0;
 }
 
 form {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    position: relative;
+    width: 340px;
+    height: 380px;
+    padding: 25px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 input[type="email"],
 input[type="password"],
-input[type="checkbox"],
 button {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -42,3 +43,23 @@ label {
     display: block;
     margin-bottom: 10px;
 }
+
+.lock-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 14px;
+}
+
+    .lock-icon i {
+        font-size: 45px;
+    }
+
+
+.login-text {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+

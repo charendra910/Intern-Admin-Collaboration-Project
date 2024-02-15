@@ -8,22 +8,40 @@
 
 <html>
 <head>
-
-    <link rel="stylesheet" type="text/css" href="~/css/Style1.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="css/Style1.css">
 
 </head>
 <body>
+    
     <form asp-controller="Access" asp-action="Login" method="post">
-        <h1>Login</h1>
-        <label>Email</label>
-        <input type="email" placeholder="Email" asp-for="Email"/>
-        <label>Password</label>
-        <input type="password" placeholder="Password" asp-for="PassWord"/>
+     
+        <div class="lock-icon">
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="login-text">
+            <h1>Login</h1>
+        </div>
         <label>
-            <input type="checkbox" asp-for="KeepLoggedIn" />
-            Keep me logged In.
+            <i class="fas fa-envelope"></i> 
+            Email
         </label>
-        <button type="submit">Login</button>
+        <input type="email" placeholder="Email" asp-for="Email" /><br />
+        <label style="margin-top: 3px;">
+            <i class="fas fa-key"></i> 
+            Password
+        </label>
+        <input type="password" placeholder="Password" asp-for="PassWord" />
+        <br /><br />
+        <label style="margin-bottom: 2px;">
+            <input type="checkbox" asp-for="KeepLoggedIn" name="remember" />
+                Keep me logged In.
+           </label>
+       
+        <br />
+        <button style="margin-top: 0px;" type="submit">Login</button>
 
         @if (ViewData["ValidateMessage"] != null)
         {
@@ -32,6 +50,8 @@
             <label>@ViewData["ValidateMessage"]</label>
         }
 
+       
     </form>
+
 </body>
 </html>
