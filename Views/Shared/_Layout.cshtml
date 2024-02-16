@@ -1,52 +1,105 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link href="~/css/MyCustomStyleSheet.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Intern_Admin_Collaboration</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Intern_Admin_Collaboration.styles.css" asp-append-version="true" />
+    <style>
+        .container-fluid, .navbar-brand {
+            background-color: blueviolet;
+            font-size:25px;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            text-decoration-color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-nav .nav-link {
+            text-align: center;
+            padding: 22px;
+            
+        }
+
+        .nav-item {
+           
+            border: 1px solid blue;
+            border-radius: 5px;
+            background-color:cadetblue;
+            padding-left:25px;
+           
+            padding-right: 25px;
+            margin-left:10px;
+            margin-right: 0px;
+            margin-bottom: 10px;
+        }
+
+            .nav-link {
+            color: red; /* Change the color as per your requirement */
+            }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Intern_Admin_Collaboration</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+    <div class="container-fluid">
+        <a class="navbar-brand"><b>Intern Admin Collaboration</b></a>
+    </div>
+    <div>
+        <div class="row">
+            <nav style="margin-top:0px" class="navbar navbar-expand-sm bg-dark navbar-dark col-md-2">
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-controller="home" asp-action="Dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-controller="home" asp-action="CreateAdmin">Create Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LogOut">Log Out</a>
+                            <a class="nav-link" asp-controller="home" asp-action="AddEventDetails">Add Intern Details</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="InternApprovedDetails">Intern Approved Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="InternLeaveDetails">Intern Leave Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="AddInternSalary">Add Intern Salary</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="InternTaskDetails">Intern Task Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="InternCertificateDetails">Intern Certificate Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="EventsDashboard">Events Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="AddEventDetails">Add Event Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="LogOut">Log Out</a>
+                        </li>
+
                     </ul>
                 </div>
+            </nav>
+           <div class="col-md-10">
+                @RenderBody()
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Intern_Admin_Collaboration - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    </div>
 </body>
 </html>

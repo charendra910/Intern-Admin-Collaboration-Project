@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 //using Intern Admin Collaboration.Data;
 
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
