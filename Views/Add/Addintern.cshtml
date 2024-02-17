@@ -1,0 +1,133 @@
+﻿@model IEnumerable<Interns>
+@{
+    ViewData["Title"] = "Addintern";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Addintern</h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px; /* Adjust the gap between boxes */
+            margin-bottom: 20px; /* Add margin at the bottom */
+        }
+
+        .box {
+            width: calc(33.33% - 10px); /* Adjust the width of each box */
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Apply border-radius for rounded corners */
+        }
+
+        .container-two {
+            display: flex;
+            justify-content: space-between;
+            gap: 1px; /* Adjust the gap between boxes */
+        }
+
+        .box-two {
+            width: calc(50% - 10px); /* Adjust the width of each box */
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Apply border-radius for rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+    <div class="container-two">
+        <div class="box-two">Box 4</div>
+        <div class="box-two">Box 5</div>
+    </div>
+</body>
+</html>
+
+
+
+
+<h1>`Intern List</h1>
+<div class="container p-4">
+    <div class="row p-3">
+        <div class="col-6">
+            <h2> Create Admin </h2>
+        </div>
+        <div class="col-6">
+            <a class=" btn btn-primary" asp-action="Add" asp-
+               controller="AddController">Add Intern</a>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table-striped" style="width:auto">
+    <thead>
+        <tr>
+            <th>
+                FirstName
+            </th>
+            <th>
+                LastName
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+               Age
+            </th>
+            <th>
+                JoinDate
+            </th>
+            <th>
+                EndDate
+            </th>
+            <th>
+                Contact
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                ClgName
+            </th>
+            <th>
+                InternDpt
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.firstname</td>
+                <td>@item.lastname</td>
+                <td>@item.email </td>
+                <td>@item.password </td>
+                <td>@item.gender </td>
+                <td>@item.age</td>
+                <td>@item.joindate</td>
+                <td>@item.endingdate</td>
+                <td>@item.contact </td>
+                <td>@item.city </td>
+                <td>@item.collagename </td>
+                <td>@item.interndepart</td>
+            </tr>
+        }
+    </tbody>
+</table>
