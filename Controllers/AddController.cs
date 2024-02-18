@@ -1,5 +1,5 @@
 ﻿using Intern_Admin_Collaboration.Data;
-
+using Intern_Admin_Collaboration.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Intern_Admin_Collaboration.Controllers
@@ -23,5 +23,14 @@ namespace Intern_Admin_Collaboration.Controllers
             var addintern = s1.AddIntern.ToList();
             return View(addintern);
         }
+
+        [HttpPost]
+        public IActionResult Addintern(Interns intern)
+        {
+            s1.AddIntern.Add(intern);
+            s1.SaveChanges();
+            return RedirectToAction("Addindex");
+        }
+
     }
 }

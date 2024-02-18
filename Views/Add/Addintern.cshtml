@@ -4,110 +4,179 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="bd-color">
+
+<form method="post" class="row g-8" id="internForm">
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <label class="col-form-label">FirstName</label>
+            <div class="col">
+                <input type="text" id="firstname" name="firstname" class="form-control" required />
+                <div class="invalid-feedback">First name is required.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">LastName</label>
+            <div class="col">
+                <input type="text" id="lastname" name="lastname" class="form-control" required />
+                <div class="invalid-feedback">Last name is required.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">Email</label>
+            <div class="col">
+                <input type="email" id="email" name="email" class="form-control" required />
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">Password</label>
+            <div class="col">
+                <input type="password" id="password" name="password" class="form-control" required />
+                <div class="invalid-feedback">Password is required.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">Gender</label>
+            <div class="col">
+                <input type="text" id="gender" name="gender" class="form-control" required />
+                <div class="invalid-feedback">Gender is required.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">Age</label>
+            <div class="col">
+                <input type="number" id="age" name="age" class="form-control" required />
+                <div class="invalid-feedback">Age is required.</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <label class="col-form-label">Join Date</label>
+            <div class="col">
+                <input type="date" id="joindate" name="joindate" class="form-control" required />
+                <div class="invalid-feedback">Join date is required.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">End Date</label>
+            <div class="col">
+                <input type="date" id="endingdate" name="endingdate" class="form-control" required />
+                <div class="invalid-feedback">End date is required.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">Contact</label>
+            <div class="col">
+                <input type="tel" id="contact" name="contact" class="form-control" required pattern="[0-9]{10}" />
+                <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">City</label>
+            <div class="col">
+                <input type="text" id="city" name="city" class="form-control" required />
+                <div class="invalid-feedback">City is required.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">Collage Name</label>
+            <div class="col">
+                <input type="text" id="collagename" name="collagename" class="form-control" required />
+                <div class="invalid-feedback">Collage name is required.</div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-form-label">Intern Dpt</label>
+            <div class="col">
+                <input type="text" id="interndepart" name="interndepart" class="form-control" required />
+                <div class="invalid-feedback">Intern department is required.</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+    <button class="btn btn-primary  btn-block" type="submit">ADD INTERN</button>
+</div>
+
+<</form>
 
 
 <!DOCTYPE html>
 <html>
 <head>
     <style>
-       
-
         .box {
-            width: calc(33.33% - 10px); /* Adjust the width of each box */
+            width: calc(33.33% - 10px);
             background-color: #f0f0f0;
             padding: 20px;
             border: 1px solid #ccc;
-            border-radius: 10px; /* Apply border-radius for rounded corners */
+            border-radius: 10px;
         }
 
         .box-two {
-            width: calc(50% - 10px); /* Adjust the width of each box */
+            width: calc(50% - 10px);
             background-color: #f0f0f0;
             padding: 20px;
             border: 1px solid #ccc;
-            border-radius: 10px; /* Apply border-radius for rounded corners */
+            border-radius: 10px;
         }
+
+        .bd-color {
+            background-color: antiquewhite;
+        }
+
     </style>
 </head>
 <body>
-   
-
-</body>
-</html>
-
-
-
-
 
 <div class="container p-4">
-    <div class="row p-3">
+    <div class="row p-3 justify-content-center">
         <div class="col-6">
-            <h2> Create Admin </h2>
-        </div>
-        <div class="col-6">
-            <a class=" btn btn-primary" asp-action="Add" asp-
-               controller="AddController">Add Intern</a>
+            <h2 class="text-center">Admin Details</h2>
         </div>
     </div>
 </div>
-<table class="table table-bordered table-striped" style="width:auto">
-    <thead>
-        <tr>
-            <th>
-                FirstName
-            </th>
-            <th>
-                LastName
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Password
-            </th>
-            <th>
-                Gender
-            </th>
-            <th>
-               Age
-            </th>
-            <th>
-                JoinDate
-            </th>
-            <th>
-                EndDate
-            </th>
-            <th>
-                Contact
-            </th>
-            <th>
-                City
-            </th>
-            <th>
-                ClgName
-            </th>
-            <th>
-                InternDpt
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
             <tr>
-                <td>@item.firstname</td>
-                <td>@item.lastname</td>
-                <td>@item.email </td>
-                <td>@item.password </td>
-                <td>@item.gender </td>
-                <td>@item.age</td>
-                <td>@item.joindate</td>
-                <td>@item.endingdate</td>
-                <td>@item.contact </td>
-                <td>@item.city </td>
-                <td>@item.collagename </td>
-                <td>@item.interndepart</td>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>JoinDate</th>
+                <th>EndDate</th>
+                <th>Contact</th>
+                <th>City</th>
+                <th>ClgName</th>
+                <th>InternDpt</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.firstname</td>
+                    <td>@item.lastname</td>
+                    <td>@item.email</td>
+                    <td>@item.password</td>
+                    <td>@item.gender</td>
+                    <td>@item.age</td>
+                    <td>@item.joindate</td>
+                    <td>@item.endingdate</td>
+                    <td>@item.contact</td>
+                    <td>@item.city</td>
+                    <td>@item.collagename</td>
+                    <td>@item.interndepart</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

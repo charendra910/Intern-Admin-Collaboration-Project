@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title</title>
@@ -48,6 +49,7 @@
             .nav-link {
             color: red; /* Change the color as per your requirement */
             }
+
     </style>
 </head>
 <body>
@@ -60,16 +62,16 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Add" asp-action="Addintern">Dashboard</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="home" asp-action="CreateAdmin">Create Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="home" asp-action="AddEventDetails">Add Intern Details</a>
+                            <a class="nav-link" asp-controller="Add" asp-action="Addintern">Add Intern Details</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="home" asp-action="InternApprovedDetails">Intern Approved Details</a>
+                            <a class="nav-link" asp-controller="Approve" asp-action="Approveinterns">Intern Approved Details</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="home" asp-action="InternLeaveDetails">Intern Leave Details</a>

@@ -1,0 +1,83 @@
+﻿@model ApprovedModel
+@{
+    ViewData["Title"] = "Approveinterns";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<center><h1>Add Intern Approved details</h1></center>
+
+<br />
+
+<style>
+    .form-control {
+        background-color: #f0f0f0; /* Slightly darker white */
+    }
+</style>
+
+<form method="post" class="row g-8">
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="firstname">FirstName</label>
+                <input asp-for="firstname"  class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="lastname">LastName</label>
+                <input asp-for="lastname" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="department">Department</label>
+                <input asp-for="department" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="reason">Reason</label>
+                <input asp-for="reason" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="start_date">Start Date</label>
+                <input asp-for="start_date" type="date" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="end_date">End Date</label>
+                <input asp-for="end_date" type="date" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="status">Status</label>
+                <input asp-for="status" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="applied_date">Applied Date</label>
+                <input asp-for="applied_date" type="date" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <br />
+        <button class="btn btn-primary" type="submit">ADD INTERN APPROVED DETAILS</button>
+    </div>
+
+
+</form>
+<br/>
+<br/>
+
+<div class="col-6">
+    <a class=" btn btn-primary" asp-action="Approveview" asp-
+       controller="ApproveController">Show Approved Details</a>
+</div>
