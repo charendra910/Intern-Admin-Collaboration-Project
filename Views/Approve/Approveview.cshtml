@@ -29,6 +29,20 @@
             background-color: antiquewhite;
         }
 
+        .edit-btn {
+            padding-left: 40px;
+            padding-right:50px;
+            /* Adjust as needed */
+           
+        }
+
+        .delete-btn {
+            padding-left: 40px;
+            padding-right:33px;
+
+           
+        }
+
     </style>
 </head>
 <body>
@@ -41,10 +55,11 @@
         </div>
     </div>
 
-    <div class="container">
+http://localhost:5085/Approveview/Delete/5    <div class="container">
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>FirstName</th>
                     <th>LastName</th>
                     <th>Department</th>
@@ -53,12 +68,14 @@
                     <th>End Date</th>
                     <th>Status</th>
                     <th>Applied Date</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
+                        <td>@item.id</td>
                         <td>@item.firstname</td>
                         <td>@item.lastname</td>
                         <td>@item.department</td>
@@ -67,6 +84,23 @@
                         <td>@item.end_date</td>
                         <td>@item.status</td>
                         <td>@item.applied_date</td>
+
+                        <td role="group">
+                            <!-- Edit button -->
+                            <div class="row mb-2">
+                                <div class="col-md-12">
+                                    <a class="btn btn-primary btn-block edit-btn" asp-controller="ApproveController1" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                                </div>
+                            </div>
+                            <!-- Delete button -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a class="btn btn-danger btn-block delete-btn" asp-controller="Approve" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                                </div>
+                            </div>
+                        </td>
+
+
                     </tr>
                 }
             </tbody>

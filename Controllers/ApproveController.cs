@@ -33,6 +33,19 @@ namespace Intern_Admin_Collaboration.Controllers
             s1.SaveChanges();
             return RedirectToAction("Addindex");
         }
+
+        public IActionResult Delete(int id)
+        {
+            var data = s1.ApprovedInterns.Find(id);
+            if (data != null)
+            {
+                s1.ApprovedInterns.Remove(data);
+                s1.SaveChanges();
+            }
+            return RedirectToAction("Approveview"); // Replace "Index" with the appropriate action name or URL
+        }
+
+
     }
 }
 
