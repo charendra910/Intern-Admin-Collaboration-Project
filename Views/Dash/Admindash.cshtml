@@ -1,0 +1,140 @@
+﻿@model IEnumerable<DashboardModel>
+
+@{
+    ViewData["Title"] = "Admindash";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px; /* Adjust the gap between boxes */
+            margin-bottom: 20px; /* Add margin at the bottom */
+        }
+
+        .box {
+            width: calc(33.33% - 10px); /* Adjust the width of each box */
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Apply border-radius for rounded corners */
+        }
+
+        .container-two {
+            display: flex;
+            justify-content: space-between;
+            gap: 1px; /* Adjust the gap between boxes */
+        }
+
+        .box-two {
+            width: calc(50% - 10px); /* Adjust the width of each box */
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Apply border-radius for rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+    <div class="container-two">
+        <div class="box-two">Box 4</div>
+        <div class="box-two">Box 5</div>
+    </div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            width: calc(33.33% - 10px);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .box-two {
+            width: calc(50% - 10px);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .bd-color {
+            background-color: antiquewhite;
+        }
+
+        .edit-btn {
+            padding-left: 40px;
+            padding-right: 50px;
+            /* Adjust as needed */
+        }
+
+        .delete-btn {
+            padding-left: 40px;
+            padding-right: 33px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container p-4">
+        <div class="row p-3 justify-content-center">
+            <div class="col-6">
+                <h2 class="text-center">Admin Details</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Department</th>
+                    <th>Mobile</th>
+                
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.id</td>
+                        <td>@item.name</td>
+                        <td>@item.email</td>
+                        <td>@item.password</td>
+                        <td>@item.department</td>
+                        <td>@item.mobile</td>
+              
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
