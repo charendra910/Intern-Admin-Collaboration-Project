@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 //using Intern Admin Collaboration.Data;
 
+//good job
 
 var builder = WebApplication.CreateBuilder(args);
 
