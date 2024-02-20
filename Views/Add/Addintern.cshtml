@@ -1,103 +1,118 @@
 ﻿@model IEnumerable<Interns>
+
 @{
     ViewData["Title"] = "Addintern";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <div class="bd-color">
 
-<form method="post" class="row g-8" id="internForm">
-    <div class="col-md-6">
-        <div class="row mb-3">
-            <label class="col-form-label">FirstName</label>
-            <div class="col">
-                <input type="text" id="firstname" name="firstname" class="form-control" required />
-                <div class="invalid-feedback">First name is required.</div>
+    <form method="post" class="row g-10" id="internForm">
+        <div class="col-md-6">
+            <div class="row mb-3">
+                <label class="col-form-label">First Name</label>
+                <div class="col">
+                    <input type="text" id="firstname" name="firstname" class="form-control" required />
+                    <div class="invalid-feedback">First name is required.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">Last Name</label>
+                <div class="col">
+                    <input type="text" id="lastname" name="lastname" class="form-control" required />
+                    <div class="invalid-feedback">Last name is required.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">Email</label>
+                <div class="col">
+                    <input type="email" id="email" name="email" class="form-control" required />
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">Password</label>
+                <div class="col">
+                    <input type="password" id="password" name="password" class="form-control" required />
+                    <div class="invalid-feedback">Password is required.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">Gender</label>
+                <div class="col">
+                    <input type="text" id="gender" name="gender" class="form-control" required />
+                    <div class="invalid-feedback">Gender is required.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">Age</label>
+                <div class="col">
+                    <input type="number" id="age" name="age" class="form-control" required />
+                    <div class="invalid-feedback">Age is required.</div>
+                </div>
             </div>
         </div>
-        <div class="row mb-3">
-            <label class="col-form-label">LastName</label>
-            <div class="col">
-                <input type="text" id="lastname" name="lastname" class="form-control" required />
-                <div class="invalid-feedback">Last name is required.</div>
+        <div class="col-md-6">
+            <div class="row mb-3">
+                <label class="col-form-label">Join Date</label>
+                <div class="col">
+                    <input type="date" id="joindate" name="joindate" class="form-control" required />
+                    <div class="invalid-feedback">Join date is required.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">End Date</label>
+                <div class="col">
+                    <input type="date" id="endingdate" name="endingdate" class="form-control" required />
+                    <div class="invalid-feedback">End date is required.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">Contact</label>
+                <div class="col">
+                    <input type="tel" id="contact" name="contact" class="form-control" required pattern="[0-9]{10}" />
+                    <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">City</label>
+                <div class="col">
+                    <input type="text" id="city" name="city" class="form-control" required />
+                    <div class="invalid-feedback">City is required.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">Collage Name</label>
+                <div class="col">
+                    <input type="text" id="collagename" name="collagename" class="form-control" required />
+                    <div class="invalid-feedback">Collage name is required.</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-form-label">Intern Dpt</label>
+                <div class="col">
+                    <input type="text" id="interndepart" name="interndepart" class="form-control" required />
+                    <div class="invalid-feedback">Intern department is required.</div>
+                </div>
             </div>
         </div>
-        <div class="row mb-3">
-            <label class="col-form-label">Email</label>
-            <div class="col">
-                <input type="email" id="email" name="email" class="form-control" required />
-                <div class="invalid-feedback">Please enter a valid email address.</div>
-            </div>
+        <div class="col-md-12">
+            <button class="btn btn-primary btn-block" type="submit">ADD INTERN</button>
         </div>
-        <div class="row mb-3">
-            <label class="col-form-label">Password</label>
-            <div class="col">
-                <input type="password" id="password" name="password" class="form-control" required />
-                <div class="invalid-feedback">Password is required.</div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-form-label">Gender</label>
-            <div class="col">
-                <input type="text" id="gender" name="gender" class="form-control" required />
-                <div class="invalid-feedback">Gender is required.</div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-form-label">Age</label>
-            <div class="col">
-                <input type="number" id="age" name="age" class="form-control" required />
-                <div class="invalid-feedback">Age is required.</div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="row mb-3">
-            <label class="col-form-label">Join Date</label>
-            <div class="col">
-                <input type="date" id="joindate" name="joindate" class="form-control" required />
-                <div class="invalid-feedback">Join date is required.</div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-form-label">End Date</label>
-            <div class="col">
-                <input type="date" id="endingdate" name="endingdate" class="form-control" required />
-                <div class="invalid-feedback">End date is required.</div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-form-label">Contact</label>
-            <div class="col">
-                <input type="tel" id="contact" name="contact" class="form-control" required pattern="[0-9]{10}" />
-                <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-form-label">City</label>
-            <div class="col">
-                <input type="text" id="city" name="city" class="form-control" required />
-                <div class="invalid-feedback">City is required.</div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-form-label">Collage Name</label>
-            <div class="col">
-                <input type="text" id="collagename" name="collagename" class="form-control" required />
-                <div class="invalid-feedback">Collage name is required.</div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label class="col-form-label">Intern Dpt</label>
-            <div class="col">
-                <input type="text" id="interndepart" name="interndepart" class="form-control" required />
-                <div class="invalid-feedback">Intern department is required.</div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12">
-    <button class="btn btn-primary  btn-block" type="submit">ADD INTERN</button>
+    </form>
+
 </div>
 
-<</form>
+<style>
+    body {
+        background-color: antiquewhite; /* Choose your desired background color */
+    }
+</style>
 
+<br />
+
+<div class="col-6">
+    <a class=" btn btn-primary" asp-action="Showinterns" asp-
+       controller="AddController">Show Interns Details</a>
+</div>

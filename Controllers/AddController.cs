@@ -18,6 +18,12 @@ namespace Intern_Admin_Collaboration.Controllers
             return View();
         }
 
+        public IActionResult Showinterns ()
+        {
+            var addintern = s1.AddIntern.ToList();
+            return View(addintern);
+
+        }
         public IActionResult Addintern()
         {
             var addintern = s1.AddIntern.ToList();
@@ -29,7 +35,7 @@ namespace Intern_Admin_Collaboration.Controllers
         {
             s1.AddIntern.Add(intern);
             s1.SaveChanges();
-            return RedirectToAction("Addindex");
+            return RedirectToAction("Showinterns"); //Addindex
         }
 
     }

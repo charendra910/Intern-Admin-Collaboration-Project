@@ -1,23 +1,20 @@
-﻿@model ApprovedModel
-
+﻿@model Intern_Admin_Collaboration.Models.ApprovedModel
 @{
-    ViewData["Title"] = "Approveinterns";
+    ViewData["Title"] = "Editleave";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br />
-<center><h1> Intern Approved details</h1></center>
 
-<br />
-
-<style>
-    .form-control {
-        background-color: #f0f0f0; /* Slightly darker white */
-    }
-</style>
+<h1>Editleave</h1>
 
 <form method="post" class="row g-8">
     <div class="col-md-6">
-       
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="id">Id</label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+        </div>
         <div class="row mb-3">
             <div class="col-md-12">
                 <label class="col-form-label" asp-for="firstname">FirstName</label>
@@ -63,32 +60,25 @@
                 <span asp-validation-for="end_date" class="text-danger"></span>
             </div>
         </div>
-        <div class="row mb-3">
-            <div class="col-md-12">
-                <label class="col-form-label" asp-for="status">Status</label>
-                <input asp-for="status" class="form-control" />
-                <span asp-validation-for="status" class="text-danger"></span>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label class="col-form-label" asp-for="status">Status</label>
+                    <input asp-for="status" class="form-control" />
+                    <span asp-validation-for="status" class="text-danger"></span>
+                </div>
+        </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label class="col-form-label" asp-for="applied_date">Applied Date</label>
+                    <input asp-for="applied_date" type="date" class="form-control" />
+                    <span asp-validation-for="applied_date" class="text-danger"></span>
+                </div>
             </div>
         </div>
-        <div class="row mb-3">
-            <div class="col-md-12">
-                <label class="col-form-label" asp-for="applied_date">Applied Date</label>
-                <input asp-for="applied_date" type="date" class="form-control" />
-                <span asp-validation-for="applied_date" class="text-danger"></span>
-            </div>
+        <div class="col-md-12">
+            <br />
+            <button class="btn btn-primary" type="submit">UPDATE STATUS</button>
         </div>
-    </div>
-    <div class="col-md-12">
-        <br />
-        <button class="btn btn-primary" type="submit" >ADD INTERN APPROVED DETAILS</button>
-    </div>
 
 
 </form>
-<br/>
-<br/>
-
-<div class="col-6">
-    <a class=" btn btn-primary" asp-action="Approveview" asp-
-       controller="ApproveController">Show Approved Details</a>
-</div>

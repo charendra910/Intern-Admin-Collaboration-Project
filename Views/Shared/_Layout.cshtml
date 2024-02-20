@@ -46,9 +46,17 @@
             margin-bottom: 10px;
         }
 
-            .nav-link {
+        .nav-link {
             color: red; /* Change the color as per your requirement */
-            }
+        }
+
+        .footer {
+            background-color: dimgrey; /* Light blue background color */
+            color: white; /* White text color */
+            text-align: center; /* Center align text */
+            height:50px;
+        }
+
 
     </style>
 </head>
@@ -62,8 +70,9 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">Dashboard</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Privacy">Dashboard</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="home" asp-action="CreateAdmin">Create Admin</a>
                         </li>
@@ -74,7 +83,7 @@
                             <a class="nav-link" asp-controller="Approve" asp-action="Approveinterns">Intern Approved Details</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Approve" asp-action="Approveview">Intern Leave Details</a>
+                            <a class="nav-link" asp-controller="Approve" asp-action="Approveleave">Intern Leave Details</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="home" asp-action="AddInternSalary">Add Intern Salary</a>
@@ -103,5 +112,10 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+            &copy; @DateTime.Now.Year - c co...
+        </div>
+    </footer>
 </body>
 </html>

@@ -21,6 +21,11 @@ builder.Services.AddDbContext<approvedcontext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
 });
 
+builder.Services.AddDbContext<Dashcontext>(obdash =>
+{
+    obdash.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
+});
+
 
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)
