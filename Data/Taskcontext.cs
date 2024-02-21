@@ -6,12 +6,12 @@ namespace Intern_Admin_Collaboration.Data
 {
     public class Taskcontext:DbContext
     {
-        public Taskcontext(DbContextOptions<Taskcontext> objtask)  
-           : base(objtask)
+        public Taskcontext(DbContextOptions<Taskcontext> otask)  
+           : base(otask)
         {
 
         }
 
-        public DbSet<TaskdetailModel> TaskInterns { get; set; }
+        public DbSet<TaskdetailModel> Taskinterns { get; set; }
     }
 }
