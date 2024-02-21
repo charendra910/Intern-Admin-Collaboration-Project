@@ -27,6 +27,11 @@ builder.Services.AddDbContext<Dashcontext>(obdash =>
     obdash.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
 });
 
+builder.Services.AddDbContext<Taskcontext>(otask =>
+{
+    otask.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
+});
+
 
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)

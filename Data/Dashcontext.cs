@@ -7,8 +7,9 @@ namespace Intern_Admin_Collaboration.Data
     {
         public Dashcontext(DbContextOptions<Dashcontext>obj)
         :base(obj)
-        {
         
+        {
+            
         }
 
         public DbSet<DashboardModel> DashboardIntern { get; set; }

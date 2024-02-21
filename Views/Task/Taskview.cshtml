@@ -1,0 +1,99 @@
+﻿@model IEnumerable<TaskdetailModel>
+
+@{
+    ViewData["Title"] = "Taskview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            width: calc(33.33% - 10px);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .box-two {
+            width: calc(50% - 10px);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .bd-color {
+            background-color: antiquewhite;
+        }
+
+        .approve-btn {
+            padding-left: 50px;
+            padding-right: 40px;
+            /* Adjust as needed */
+        }
+
+        .reject-btn {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container p-4">
+        <div class="row p-3 justify-content-center">
+            <div class="col-6">
+                <h2 class="text-center">Admin Details</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                  <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Task Name</th>
+                    <th>Assign Date</th>
+                    <th>Deadline Date</th>
+                    <th>Operation</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                       <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.Department</td>
+                        <td>@item.Task_Name</td>
+                        <td>@item.Assign_Date</td>
+                        <td>@item.Deadline_Date</td>
+
+                        <td role="group">
+                            <div class="row mb-2">
+                                <div class="col-md-12">
+                                    <a class="btn btn-primary btn-block approve-btn" asp-controller="Task" asp-action="Edittask" asp-route-id="@item.Id">Edit</a>
+                                </div>
+                            </div>
+             
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

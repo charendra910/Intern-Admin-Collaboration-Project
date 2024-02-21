@@ -1,0 +1,75 @@
+﻿@model TaskdetailModel
+@{
+    ViewData["Title"] = "Addtask";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .form-control {
+        background-color: #f0f0f0; /* Slightly darker white */
+    }
+</style>
+
+
+<form method="post" class="row g-8">
+    <div class="col-md-6">
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Name">Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Email">Email</label>
+                <input asp-for="Email" type="email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Department">Department</label>
+                <input asp-for="Department" class="form-control" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Task_Name">Task Name</label>
+                <input asp-for="Task_Name" class="form-control" />
+                <span asp-validation-for="Task_Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Assign_Date">Assign Date</label>
+                <input asp-for="Assign_Date" class="form-control" />
+                <span asp-validation-for="Assign_Date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Deadline_Date">Deadline Date</label>
+                <input asp-for="Deadline_Date" class="form-control" />
+                <span asp-validation-for="Deadline_Date" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <br />
+        <button class="btn btn-primary" type="submit">ADD TASK DETAILS</button>
+    </div>
+
+</form>
+
+<br />
+<br />
+<div class="col-md-12">
+    <a class=" btn btn-primary" asp-action="Taskview" asp-controller="Task">Show Task Details</a>
+</div>

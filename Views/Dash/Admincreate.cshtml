@@ -1,0 +1,73 @@
+﻿@model DashboardModel;
+
+@{
+    ViewData["Title"] = "Admincreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Admincreate</h1>
+
+
+<style>
+    .form-control {
+        background-color: #f0f0f0; /* Slightly darker white */
+    }
+</style>
+
+<form method="post" class="row g-8">
+    <div class="col-md-6">
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="name">Name</label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="email">Email</label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="password">Password</label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="department">Department</label>
+                <input asp-for="department" class="form-control" />
+                <span asp-validation-for="department" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="mobile">Mobile</label>
+                <input asp-for="mobile" class="form-control" />
+                <span asp-validation-for="mobile" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <br />
+        <button class="btn btn-primary" type="submit">ADD INTERN APPROVED DETAILS</button>
+    </div>
+
+
+</form>
+
+
+
+
+<br />
+<br />
+
+<div class="col-6">
+    <a class=" btn btn-primary" asp-action="AdminDash" asp-controller="Dash">Show Approved Details</a>
+</div>
