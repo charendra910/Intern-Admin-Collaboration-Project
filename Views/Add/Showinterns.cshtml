@@ -29,6 +29,11 @@
             background-color: antiquewhite;
         }
 
+        .custom-padding {
+            padding-left: 300px; /* Adjust the padding value as needed */
+        }
+
+
     </style>
 </head>
 <body>
@@ -40,6 +45,21 @@
             </div>
         </div>
     </div>
+
+    <div class="row custom-padding">
+        <div class="col-md-6">
+            <form class="d-flex" asp-action="ShowInterns" asp-controller="Add">
+                <input name="searchString" class="form-control me-1" type="search" placeholder="Search" arial-label="Search" />
+                <button class="btn btn-dark" type="submit">Search by name</button>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <a asp-action="ShowInterns" class="text-dark">Back to list</a>
+        </div>
+    </div>
+
+    <br />
 
     <div class="container">
         <table class="table table-bordered table-striped">
