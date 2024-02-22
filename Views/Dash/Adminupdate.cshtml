@@ -1,22 +1,25 @@
-﻿@model DashboardModel;
+﻿@model Intern_Admin_Collaboration.Models.DashboardModel;
+
 
 @{
-    ViewData["Title"] = "Admincreate";
+    ViewData["Title"] = "Adminupdate";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Admincreate</h1>
+<h1>Adminupdate</h1>
 
 
-<style>
-    .form-control {
-        background-color: #f0f0f0; /* Slightly darker white */
-    }
-</style>
+
 
 <form method="post" class="row g-8">
     <div class="col-md-6">
-
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="id">Id</label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+        </div>
         <div class="row mb-3">
             <div class="col-md-12">
                 <label class="col-form-label" asp-for="name">Name</label>
@@ -54,20 +57,13 @@
             </div>
         </div>
     </div>
+  
     <div class="col-md-12">
         <br />
-        <button class="btn btn-primary" type="submit">ADD INTERN APPROVED DETAILS</button>
+        <button class="btn btn-primary" type="submit">UPDATE STATUS</button>
     </div>
 
 
 </form>
 
 
-
-
-<br />
-<br />
-
-<div class="col-6">
-    <a class=" btn btn-primary" asp-action="Adminedit" asp-controller="Dash">Show Approved Details</a>
-</div>

@@ -22,8 +22,11 @@ namespace Intern_Admin_Collaboration.Controllers
 
         public IActionResult Adminedit ()
         {
-            return View();
+            var addadmin = s2.DashboardIntern.ToList();
+            return View(addadmin);
         }
+
+      
 
         public IActionResult Admincreate () 
         
@@ -34,7 +37,7 @@ namespace Intern_Admin_Collaboration.Controllers
         [HttpPost]
         public IActionResult Admincreate(DashboardModel dash)
         {
-            if(ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 s2.DashboardIntern.Add(dash);
                 s2.SaveChanges();
@@ -45,6 +48,31 @@ namespace Intern_Admin_Collaboration.Controllers
 
         }
 
-     
+        public IActionResult Adminupdate (int id)
+        {
+
+            var data = s2.DashboardIntern.Find(id);
+
+            if (data == null)
+            {
+                return NotFound(); // Or handle the case where the student with the given id is not found
+            }
+
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult Adminupdate (DashboardModel data)
+        {
+
+            s2.DashboardIntern.Update(data);
+            s2.SaveChanges();
+
+            return RedirectToAction("Adminedit");
+
+
+
+        }
+
     }
 }

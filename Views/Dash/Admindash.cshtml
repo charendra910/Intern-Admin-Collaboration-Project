@@ -9,102 +9,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-   
     <style>
         .container {
+          
+            margin-top: 10px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            align-items: center;
-            gap: 8px; /* Adjust the gap between boxes */
-            margin-bottom: 25px; /* Add margin at the bottom */
+            text-align:center;
+            gap: 10px;
+           
+            margin-bottom: 25px;
         }
 
-        .box {
-            width: calc(33.33% - 10px); /* Adjust the width of each box */
-            background-color: #f0f0f0;
-            padding: 30px;
-            border: 1px solid #ccc;
-            border-radius: 10px; /* Apply border-radius for rounded corners */
-        }
-
-        .container-two {
-            display: flex;
-            justify-content: space-between;
-            gap: 1px; /* Adjust the gap between boxes */
-        }
-
-        .box-two {
-            width: calc(50% - 10px); /* Adjust the width of each box */
-            background-color: #f0f0f0;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px; /* Apply border-radius for rounded corners */
-        }
-    </style>
-    
-</head>
-
-<body>
-    <div class="container">
-        <div class="box">Web Interns</div>
-        <div class="box">frontend Interns</div>
-        <div class="box">Backend Interns</div>
-    </div>
-    <div class="container-two">
-        <div class="box">HR Interns</div>
-        <div class="box">Marketing Interns</div>
-        <div class="box">Data Science</div>
-    </div>
-</body>
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
         .box {
             width: calc(33.33% - 10px);
             background-color: #f0f0f0;
             padding: 20px;
-            border: 1px solid #ccc;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            text-align:center;
             border-radius: 10px;
+        }
+
+        .box12 {
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 18px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-block-start: 10px;
+        }
+
+
+        .container-two {
+            display: flex;
+            justify-content: space-between;
+            gap: 1px;
         }
 
         .box-two {
             width: calc(50% - 10px);
             background-color: #f0f0f0;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 8px solid #ccc;
             border-radius: 10px;
+            margin-block: 20px;
+            text-align: center;
         }
-
-        .bd-color {
-            background-color: antiquewhite;
-        }
-
-        .edit-btn {
-            padding-left: 40px;
-            padding-right: 50px;
-            /* Adjust as needed */
-        }
-
-        .delete-btn {
-            padding-left: 40px;
-            padding-right: 33px;
-        }
-
     </style>
 </head>
 <body>
 
-    <div class="container p-1">
-        <div class="row p-3 justify-content-center">
-            <div class="col-6">
-                <h2 class="text-center">Admin Details</h2>
+    <div class="container">
+
+        <div class="box">Web Interns</div>
+        <div class="box">frontend Interns</div>
+        <div class="box">Backend Interns</div>
+    </div>
+
+    <div class="container-two">
+        <div class="box">HR Interns</div>
+        <div class="box">Marketing Interns</div>
+        <div class="box">Data Science</div>
+    </div>
+
+    <div class="container p-4">
+        <div class="col p-3 justify-content-center">
+            <div class="col-12">
+                <div class="box12">
+                    <h2 class="text-center">Department Heads</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -119,8 +96,6 @@
                     <th>Password</th>
                     <th>Department</th>
                     <th>Mobile</th>
-                
-
                 </tr>
             </thead>
             <tbody>
@@ -133,7 +108,6 @@
                         <td>@item.password</td>
                         <td>@item.department</td>
                         <td>@item.mobile</td>
-              
                     </tr>
                 }
             </tbody>
