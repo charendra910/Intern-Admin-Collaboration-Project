@@ -4,6 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@if (!ViewBag.DataFound)
+{
+    <script>
+        alert('No data found.');
+      
+    </script>
+}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,6 +47,12 @@
             padding-right: 33px;
         }
 
+        .custom-padding {
+            padding-left:200px;
+        
+        }
+
+
     </style>
 </head>
 <body>
@@ -46,10 +60,28 @@
     <div class="container p-4">
         <div class="row p-3 justify-content-center">
             <div class="col-6">
-                <h2 class="text-center">Admin Details</h2>
+                <h2 class="text-center">Approve Interns Details</h2>
             </div>
         </div>
     </div>
+
+    <div class="row custom-padding">
+        <div class="col-md-6">
+            <form class="d-flex" asp-action="Approveleave" asp-controller="Approve">
+                <input name="searchString" class="form-control me-1" type="search" placeholder="Search" arial-label="Search" />
+                <button class="btn btn-dark" type="submit">Search by name</button>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <a asp-action="Approveleave" class="text-dark">Back to list</a>
+        </div>
+    </div>
+
+
+    <br />
+    <br />
+
 
     <div class="container">
         <table class="table table-bordered table-striped">
