@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Intern_Admin_Collaboration.Controllers
 {
+
     public class ApproveController : Controller
     {
         private approvedcontext s1;
@@ -19,20 +20,15 @@ namespace Intern_Admin_Collaboration.Controllers
         {
             var addintern = s1.ApprovedInterns.ToList();
             return View(addintern);
-            
+
         }
 
         public IActionResult Approveinterns()
         {
-          
+
             return View();
         }
 
-        public IActionResult Approveleave()
-        {
-            var addintern = s1.ApprovedInterns.ToList();
-            return View(addintern);
-        }
 
         public IActionResult Editleave(int id)
         {
@@ -53,22 +49,48 @@ namespace Intern_Admin_Collaboration.Controllers
 
             s1.ApprovedInterns.Update(data);
             s1.SaveChanges();
-           
+
             return RedirectToAction("Approveview");
 
-
-
         }
-       
 
-     
-        //[HttpPost]
-        //public IActionResult Approveinterns(ApprovedModel approve)
+        //public async Task<IActionResult> Approveleave(string searchString)
         //{
-        //    s1.ApprovedInterns.Add(approve);
-        //    s1.SaveChanges();
-        //    return RedirectToAction("Addindex");
+        //    var interns = await s1.ApprovedInterns.ToListAsync();
+
+        //    if (!string.IsNullOrEmpty(searchString))
+        //    {
+        //        searchString = searchString.ToLower(); // Convert search string to lowercase
+
+        //        interns = interns.Where(s => s.firstname.ToLower().Contains(searchString) || s.lastname.ToLower().Contains(searchString)).ToList();
+        //    }
+
+        //    return View(interns);
         //}
+
+
+        public async Task<IActionResult> Approveleave(string searchString)
+        {
+            var interns = await s1.ApprovedInterns.ToListAsync();
+            bool dataFound = true; // Flag to indicate if data was found
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                searchString = searchString.ToLower(); // Convert search string to lowercase
+
+                interns = interns.Where(s => s.firstname.ToLower().Contains(searchString) || s.lastname.ToLower().Contains(searchString)).ToList();
+
+                if (interns.Count == 0)
+                {
+                    dataFound = false; // Set flag to false if no data is found
+                }
+            }
+
+            ViewBag.DataFound = dataFound; // Pass the flag to the view
+            return View(interns);
+           
+        }
+
 
         [HttpPost]
         public IActionResult Approveinterns(ApprovedModel approve)
@@ -79,7 +101,6 @@ namespace Intern_Admin_Collaboration.Controllers
                 s1.SaveChanges();
                 return RedirectToAction("Approveview");
             }
-            // If ModelState is not valid, return the view with validation errors
             return View(approve);
         }
 
@@ -100,11 +121,3 @@ namespace Intern_Admin_Collaboration.Controllers
     }
 }
 
-
-//[HttpPost]
-//public IActionResult Addintern(Interns intern)
-//{
-//    s1.AddIntern.Add(intern);
-//    s1.SaveChanges();
-//    return RedirectToAction("Addindex");
-//}
