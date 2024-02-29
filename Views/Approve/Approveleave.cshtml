@@ -4,12 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 @if (!ViewBag.DataFound)
 {
-    <script>
-        alert('No data found.');
-      
-    </script>
+    <script>alert('No data found.');</script>
 }
 
 <!DOCTYPE html>
@@ -48,15 +46,11 @@
         }
 
         .custom-padding {
-            padding-left:200px;
-        
+            padding-left: 200px;
         }
-
-
     </style>
 </head>
 <body>
-
     <div class="container p-4">
         <div class="row p-3 justify-content-center">
             <div class="col-6">
@@ -78,10 +72,8 @@
         </div>
     </div>
 
-
     <br />
     <br />
-
 
     <div class="container">
         <table class="table table-bordered table-striped">
@@ -96,7 +88,6 @@
                     <th>End Date</th>
                     <th>Status</th>
                     <th>Applied Date</th>
-                  
                 </tr>
             </thead>
             <tbody>
@@ -112,13 +103,10 @@
                         <td>@item.end_date</td>
                         <td>@item.status</td>
                         <td>@item.applied_date</td>
-
-                       
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-
 </body>
 </html>

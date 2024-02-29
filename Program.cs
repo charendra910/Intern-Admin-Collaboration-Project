@@ -32,6 +32,12 @@ builder.Services.AddDbContext<Taskcontext>(otask =>
     otask.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
 });
 
+builder.Services.AddDbContext<Certificatecontext>(ocerti =>
+{
+    ocerti.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
+});
+
+
 
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)
