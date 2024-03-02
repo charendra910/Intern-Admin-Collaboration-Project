@@ -5,6 +5,14 @@
 }
 
 
+<div style="margin-top:10px;">
+    <center>
+        <h1><b>APPROVE INTERNS DETAILS </b></h1>
+    </center>
+</div>
+
+<br />
+
 @if (!ViewBag.DataFound)
 {
     <script>alert('No data found.');</script>
@@ -51,14 +59,14 @@
     </style>
 </head>
 <body>
-    <div class="container p-4">
+  @*  <div class="container p-4">
         <div class="row p-3 justify-content-center">
             <div class="col-6">
                 <h2 class="text-center">Approve Interns Details</h2>
             </div>
         </div>
     </div>
-
+*@
     <div class="row custom-padding">
         <div class="col-md-6">
             <form class="d-flex" asp-action="Approveleave" asp-controller="Approve">
