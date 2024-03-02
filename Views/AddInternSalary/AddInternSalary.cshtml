@@ -1,0 +1,75 @@
+﻿@model Intern_Admin_Collaboration.Models.AddInternSalaryModel
+
+@{
+    ViewData["Title"] = "AddInternSalary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<center><h1>Intern Salary Details</h1></center>
+
+<br />
+
+<style>
+    .form-control {
+        background-color: #f0f0f0; /* Slightly darker white */
+    }
+</style>
+
+<form method="post" class="row g-3">
+    <div class="col-md-6">
+
+        <div class="mb-3">
+            <label class="form-label" asp-for="FirstName">First Name</label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Department</label>
+            <input asp-for="Department" class="form-control" />
+            <span asp-validation-for="Department" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">Year</label>
+            <input asp-for="Year" class="form-control" />
+            <span asp-validation-for="Year" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Month</label>
+            <input asp-for="Month" class="form-control" />
+            <span asp-validation-for="Month" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Status</label>
+            <input asp-for="Status" class="form-control" />
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary" style="width:1000px">Add Intern Salary</button>
+    </div>
+</form>
+<br/>
+<div class="col-6" align="center">
+    <a class=" btn btn-primary" asp-action="Internview" asp-
+       controller="AddInternSalary" style="width:1000px">Show Intern Salary Details</a>
+</div>
