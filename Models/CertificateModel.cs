@@ -30,7 +30,5 @@ namespace Intern_Admin_Collaboration.Models
         [Display(Name = "Choose File")]
         public string CertificateFileName { get; set; }
 
-
-
     }
 }
