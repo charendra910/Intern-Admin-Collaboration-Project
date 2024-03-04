@@ -1,0 +1,75 @@
+﻿@model Intern_Admin_Collaboration.Models.AddInternSalaryModel
+@{
+    ViewData["Title"] = "SalaryEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="row g-8">
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Id">Id</label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="FirstName">FirstName</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="LastName">LastName</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Email">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Department">Department</label>
+                <input asp-for="Department" class="form-control" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Year">Year</label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Month"> Month</label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+        </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label class="col-form-label" asp-for="Status">Status</label>
+                    <input asp-for="Status" class="form-control" />
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+            </div>
+
+        <div class="col-md-12">
+            <br />
+            <button class="btn btn-primary" type="submit" style="width:490px">Update Salary</button>
+        </div>
+    </div>
+
+</form>

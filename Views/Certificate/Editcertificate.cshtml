@@ -1,16 +1,14 @@
-﻿@model Intern_Admin_Collaboration.Models.DashboardModel;
-
+﻿@model Intern_Admin_Collaboration.Models.CertificateModel
 
 @{
-    ViewData["Title"] = "Adminupdate";
+    ViewData["Title"] = "Editcertificate";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="margin-top:5px;">
-    <center>
-        <h1><b>ADD UPDATE DETAILS</b></h1>
-    </center>
-</div>
+
+<h1>Edittask</h1>
+
+
 
 <form method="post" class="row g-8">
     <div class="col-md-6">
@@ -38,33 +36,40 @@
         </div>
         <div class="row mb-3">
             <div class="col-md-12">
-                <label class="col-form-label" asp-for="password">Password</label>
-                <input asp-for="password" class="form-control" />
-                <span asp-validation-for="password" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-12">
-                <label class="col-form-label" asp-for="department">Department</label>
-                <input asp-for="department" class="form-control" />
-                <span asp-validation-for="department" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-12">
-                <label class="col-form-label" asp-for="mobile">Mobile</label>
-                <input asp-for="mobile" class="form-control" />
-                <span asp-validation-for="mobile" class="text-danger"></span>
+                <label class="col-form-label" asp-for="intern_department">Interns Department</label>
+                <input asp-for="intern_department" class="form-control" />
+                <span asp-validation-for="intern_department" class="text-danger"></span>
             </div>
         </div>
     </div>
-  
+    <div class="col-md-6">
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="certificate_name">Certificate Name</label>
+                <input asp-for="certificate_name" class="form-control" />
+                <span asp-validation-for="certificate_name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="issue_date">Assign Date</label>
+                <input asp-for="issue_date" type="date" class="form-control" />
+                <span asp-validation-for="issue_date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="CertificateFileName">Choose File</label>
+                <input asp-for="CertificateFileName" class="form-control" />
+                <span asp-validation-for="CertificateFileName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
     <div class="col-md-12">
         <br />
-        <button class="btn btn-primary" style="width:630px;" type="submit">UPDATE STATUS</button>
+        <button class="btn btn-primary" type="submit">UPDATE CERTIFICATE STATUS</button>
     </div>
 
 
 </form>
-
 

@@ -4,9 +4,12 @@
     ViewData["Title"] = "Approveinterns";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br />
-<center><h1> Intern Approved details</h1></center>
 
+<div style="margin-top:10px;">
+    <center>
+        <h1><b>INTERNS APPROVED DETAILS </b></h1>
+    </center>
+</div>
 <br />
 
 <style>
@@ -80,15 +83,13 @@
     </div>
     <div class="col-md-12">
         <br />
-        <button class="btn btn-primary" type="submit" >ADD INTERN APPROVED DETAILS</button>
+        <button class="btn btn-primary" type="submit" style="width:1280px;" >ADD INTERN APPROVED DETAILS</button>
     </div>
 
 </form>
 
 <br/>
-<br/>
 
 <div class="col-6">
-    <a class=" btn btn-primary" asp-action="Approveview" asp-
-       controller="ApproveController">Show Approved Details</a>
+    <a class=" btn btn-primary" asp-action="Approveview" style="width:1280px;" asp-controller="ApproveController">Show Approved Details</a>
 </div>

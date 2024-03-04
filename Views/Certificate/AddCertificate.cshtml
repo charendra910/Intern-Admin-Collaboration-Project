@@ -5,8 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div style="margin-top:10px;">
+<center>
+    <h1><b>INTERNS CERTIFICATE DETAILS</b></h1>
+</center>
+</div>
 
-
+<br/>
 <style>
     .form-control {
         background-color: #f0f0f0; /* Slightly darker white */
@@ -51,7 +56,7 @@
         <div class="row mb-3">
             <div class="col-md-12">
                 <label class="col-form-label" asp-for="issue_date">Issued Date</label>
-                <input asp-for="issue_date" type="date" class="form-control" />
+                <input asp-for="issue_date"  class="form-control" />
                 <span asp-validation-for="issue_date" class="text-danger"></span>
             </div>
         </div>
@@ -65,13 +70,13 @@
     </div>
     <div class="col-md-12">
         <br />
-        <button class="btn btn-primary" type="submit">ADD CERTIFICATES DETAILS</button>
+        <button class="btn btn-primary" style="width:1280px" type="submit">ADD CERTIFICATES DETAILS</button>
     </div>
 
 </form>
 
 <br />
 <br />
-<div class="col-md-12">
-    <a class=" btn btn-primary" asp-action="Taskview" asp-controller="Task">Show Certificates Details</a>
+<div class="col-md-12" >
+    <a class=" btn btn-primary" asp-action="Certificateview" style="width:1280px" asp-controller="Certificate">Show Certificates Details</a>
 </div>

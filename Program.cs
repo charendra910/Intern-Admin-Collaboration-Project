@@ -38,6 +38,17 @@ builder.Services.AddDbContext<Certificatecontext>(ocerti =>
 });
 
 
+builder.Services.AddDbContext<AddInternSalarycontext>(osalary =>
+{
+    osalary.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
+});
+
+
+builder.Services.AddDbContext<AddEventDetailscontext>(oevent =>
+{
+    oevent.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
+});
+
 
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)

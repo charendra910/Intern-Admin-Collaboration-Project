@@ -35,5 +35,39 @@ namespace Intern_Admin_Collaboration.Controllers
             // If ModelState is not valid, return the view with validation errors
             return View(add);
         }
+
+        public IActionResult Certificateview()
+        {
+            var certiview = c1.Certificatedetails.ToList();
+            return View(certiview);
+
+        }
+
+       
+        public IActionResult Editcertificate (int id)
+        {
+
+            var data = c1.Certificatedetails.Find(id);
+
+            if (data == null)
+            {
+                return NotFound(); // Or handle the case where the student with the given id is not found
+            }
+
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult Editcertificate (CertificateModel data)
+        {
+
+            c1.Certificatedetails.Update(data);
+            c1.SaveChanges();
+
+            return RedirectToAction("Certificateview");
+
+
+
+        }
     }
 }

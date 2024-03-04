@@ -1,18 +1,13 @@
-﻿@model IEnumerable<DashboardModel>
+﻿@model IEnumerable<CertificateModel>
 
 @{
-    ViewData["Title"] = "Adminedit";
+    ViewData["Title"] = "Certificateview";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h1>Certificateview</h1>
 
-<div style="margin-top:10px;">
-    <center>
-        <h1><b>SHOW ADMIN DETAILS</b></h1>
-    </center>
-</div>
 
-<br />
 
 <!DOCTYPE html>
 <html>
@@ -53,6 +48,14 @@
 </head>
 <body>
 
+    <div class="container p-4">
+        <div class="row p-3 justify-content-center">
+            <div class="col-6">
+                <h2 class="text-center">Update Task Details</h2>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <table class="table table-bordered table-striped">
             <thead>
@@ -60,10 +63,13 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Password</th>
-                    <th>Department</th>
-                    <th>Mobile</th>
+                    <th>Interns Department</th>
+                    <th>Certificate Name</th>
+                    <th>Issue Date</th>
+                    <th>File Name</th>
+                  
                     <th>Operation</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -73,20 +79,19 @@
                         <td>@item.id</td>
                         <td>@item.name</td>
                         <td>@item.email</td>
-                        <td>@item.password</td>
-                        <td>@item.department</td>
-                        <td>@item.mobile</td>
+                        <td>@item.intern_department</td>
+                        <td>@item.certificate_name</td>
+                        <td>@item.issue_date</td>
+                        <td>@item.CertificateFileName</td>
 
                         <td role="group">
-                            <!-- Edit button -->
                             <div class="row mb-2">
                                 <div class="col-md-12">
-                                    <a class="btn btn-primary btn-block approve-btn" asp-controller="Dash" asp-action="Adminupdate" asp-route-id="@item.id">Edit</a>
+                                    <a class="btn btn-primary btn-block approve-btn" asp-controller="Certificate" asp-action="Editcertificate" asp-route-id="@item.id">Edit</a>
                                 </div>
                             </div>
-                        
-                        </td>
 
+                        </td>
                     </tr>
                 }
             </tbody>

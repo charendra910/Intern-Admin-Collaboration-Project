@@ -1,0 +1,69 @@
+﻿@model Intern_Admin_Collaboration.Models.AddEventDetailsModel
+
+@{
+    ViewData["Title"] = "AddEventDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-top:10px;">
+    <center>
+        <h1><b>INTERNS EVENT DETAILS </b></h1>
+    </center>
+</div>
+
+<br />
+<style>
+    .form-control {
+        background-color: #f0f0f0; /* Slightly darker white */
+    }
+</style>
+
+<form method="post" class="row g-3">
+    <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">Event Name</label>
+            <input asp-for="EventName" class="form-control" />
+            <span asp-validation-for="EventName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Registration Link</label>
+            <input asp-for="RegistrationLink" class="form-control" />
+            <span asp-validation-for="RegistrationLink" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Start Date</label>
+            <input asp-for="StartDate" type="date" class="form-control" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="mb-3">
+            <label class="form-label">End Date</label>
+            <input asp-for="EndDate" type="date" class="form-control" />
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Status</label>
+            <input asp-for="Status" class="form-control" />
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+
+        <!-- Input for Poster Upload -->
+        <div class="mb-3">
+            <label class="form-label">Upload Poster</label>
+            <input asp-for="PosterFileName" type="file" class="form-control" />
+            <span asp-validation-for="PosterFileName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary" style="width:1280px">Add Events</button>
+    </div>
+</form>
+<br />
+<div class="col-6" align="center">
+    <a class=" btn btn-primary" asp-action="Eventview" asp-controller="AddEventDetails" style="width:1280px">Show Event Details</a>
+</div>
