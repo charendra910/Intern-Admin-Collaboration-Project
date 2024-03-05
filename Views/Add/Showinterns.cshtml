@@ -7,11 +7,18 @@
 
 <div style="margin-top:6px;">
     <center>
-        <h1><b>ADD UPDATE DETAILS</b></h1>
+        <h1><b>ALL INTERNS DETAILS</b></h1>
     </center>
 </div>
 
 <br />
+
+
+@if (!ViewBag.DataFound)
+{
+    <script>alert('No data found.');</script>
+}
+
 
 <!DOCTYPE html>
 <html>

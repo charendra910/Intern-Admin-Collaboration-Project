@@ -29,15 +29,26 @@ namespace Intern_Admin_Collaboration.Controllers
         public async Task<IActionResult> ShowInterns(string searchString)
         {
             var interns = await s1.AddIntern.ToListAsync();
+            bool dataFound = true;
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                interns = interns.Where(s1 => s1.firstname.Contains(searchString) || s1.lastname.Contains(searchString)).ToList();
+                searchString = searchString.ToLower();
+                interns = interns.Where(s => s.firstname.ToLower().Contains(searchString) || s.lastname.ToLower().Contains(searchString)).ToList();
+
+                if (interns.Count == 0)
+                {
+                    dataFound = false; // Set flag to false if no data is found
+                }
+
             }
 
+
+            ViewBag.DataFound = dataFound;
             return View(interns);
         }
 
+       
 
         public IActionResult Addintern()
         {
