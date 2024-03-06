@@ -4,6 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<div style="margin-top:10px;">
+    <center>
+        <h1><b>EDIT SALARY INFO </b></h1>
+    </center>
+</div>
+
+
 <form method="post" class="row g-8">
     <div class="col-md-6">
         <div class="row mb-3">
@@ -37,15 +45,6 @@
         </div>
         <div class="row mb-3">
             <div class="col-md-12">
-                <label class="col-form-label" asp-for="Department">Department</label>
-                <input asp-for="Department" class="form-control" />
-                <span asp-validation-for="Department" class="text-danger"></span>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="row mb-3">
-            <div class="col-md-12">
                 <label class="col-form-label" asp-for="Year">Year</label>
                 <input asp-for="Year" class="form-control" />
                 <span asp-validation-for="Year" class="text-danger"></span>
@@ -58,18 +57,47 @@
                 <span asp-validation-for="Month" class="text-danger"></span>
             </div>
         </div>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label class="col-form-label" asp-for="Status">Status</label>
-                    <input asp-for="Status" class="form-control" />
-                    <span asp-validation-for="Status" class="text-danger"></span>
-                </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Status">Status</label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
             </div>
+        </div>
 
-        <div class="col-md-12">
-            <br />
-            <button class="btn btn-primary" type="submit" style="width:490px">Update Salary</button>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <label class="col-form-label" asp-for="Department">Department</label>
+                <input asp-for="Department" class="form-control" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
         </div>
     </div>
 
+
+    <div class="col-md-6" style="padding-left:70px;">
+        <img src="https://metana.io/wp-content/uploads/2023/08/Startup-managers-presenting-and-analyzing-sales-growth-chart-1024x683.jpg" alt="Professional People Working" class="img-fluid" style="height:650px;width:550px;">
+    </div>
+
+
 </form>
+<br/>
+        <div class="col-md-12">
+            <br />
+            <button class="btn btn-primary" style="width:630px;" type="submit" >UPDATE SALARY</button>
+        </div>
+ 
+
+
+
+
+<style>
+    pp.col-md-6{
+        padding-left:90px;
+    }
+
+    body {
+        background-color: antiquewhite; /* Choose your desired background color */
+    }
+
+</style>

@@ -7,16 +7,27 @@
 
 <div style="margin-top:6px;">
     <center>
-        <h1><b>ADD UPDATE DETAILS</b></h1>
+        <h1><b>ALL INTERNS DETAILS</b></h1>
     </center>
 </div>
 
 <br />
 
+
+@if (!ViewBag.DataFound)
+{
+    <script>alert('No data found.');</script>
+}
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <style>
+           body {
+        background-color: antiquewhite; /* Choose your desired background color */
+    }
+
         .box {
             width: calc(33.33% - 10px);
             background-color: #f0f0f0;

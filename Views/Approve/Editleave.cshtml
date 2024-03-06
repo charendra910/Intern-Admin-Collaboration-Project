@@ -4,7 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
+<div style="margin-top:10px;">
+    <center>
+        <h1><b>UPDATE STATUS DETAILS </b></h1>
+    </center>
+</div>
+<br />
 
 <form method="post" class="row g-8">
     <div class="col-md-6">
@@ -80,5 +85,16 @@
             <button class="btn btn-primary" type="submit">UPDATE STATUS</button>
         </div>
 
+    <div class="col-md-12">
+        <br />
+        <button class="btn btn-primary" asp-controller="Approve" asp-action="Approveview"  type="submit">BACK TO THE lIST</button>
+    </div>
+
 
 </form>
+
+    <style>
+    body {
+        background-color: antiquewhite; /* Choose your desired background color */
+    }
+   </style>

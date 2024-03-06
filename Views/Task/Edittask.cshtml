@@ -1,12 +1,5 @@
 ﻿@model Intern_Admin_Collaboration.Models.TaskdetailModel
 
-@{
-    ViewData["Title"] = "Edittask";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h1>Edittask</h1>
-
 
 
 <form method="post" class="row g-8">
@@ -70,5 +63,16 @@
     </div>
 
 
+    <div class="col-md-12">
+        <br />
+        <button class="btn btn-primary" asp-controller="Task" asp-action="Taskview" type="submit">BACK TO THE lIST</button>
+    </div>
+
+
 </form>
 
+    <style>
+    body {
+        background-color: antiquewhite; /* Choose your desired background color */
+    }
+</style>
