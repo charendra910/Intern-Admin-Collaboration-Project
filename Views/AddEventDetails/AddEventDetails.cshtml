@@ -41,8 +41,8 @@
             <input asp-for="StartDate" type="date" class="form-control" />
             <span asp-validation-for="StartDate" class="text-danger"></span>
         </div>
-        </div>
-        <div class="col-md-6">
+       
+       
         <div class="mb-3">
             <label class="form-label">End Date</label>
             <input asp-for="EndDate" type="date" class="form-control" />
@@ -61,13 +61,22 @@
             <input asp-for="PosterFileName" type="file" class="form-control" />
             <span asp-validation-for="PosterFileName" class="text-danger"></span>
         </div>
+ </div>
+
+
+    <div class="col-md-6" style="padding-left:70px;">
+        <img src="https://www.digitalshakha.in/assets/img/softdevintern.png" alt="Professional People Working" class="img-fluid" style="height:550px;width:500px;padding-top:25px;">
     </div>
 
+
     <div class="col-12">
-        <button type="submit" class="btn btn-primary" style="width:1280px">Add Events</button>
+        <button type="submit" class="btn btn-primary" style="width:630px;margin-top:20px;">Add Events</button>
     </div>
 </form>
 <br />
 <div class="col-6" align="center">
-    <a class=" btn btn-primary" asp-action="Eventview" asp-controller="AddEventDetails" style="width:1280px">Show Event Details</a>
+    <a class=" btn btn-primary" asp-action="Eventview" asp-controller="AddEventDetails" style="width:630px;margin-top:15px;">Show Event Details</a>
 </div>
+
+
+            
