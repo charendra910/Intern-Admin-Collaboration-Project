@@ -43,7 +43,6 @@ namespace Intern_Admin_Collaboration.Controllers
                 s2.SaveChanges();
                 return RedirectToAction("Admincreate");
             }
-            // If ModelState is not valid, return the view with validation errors
             return View(dash);
 
         }
@@ -55,7 +54,7 @@ namespace Intern_Admin_Collaboration.Controllers
 
             if (data == null)
             {
-                return NotFound(); // Or handle the case where the student with the given id is not found
+                return NotFound(); 
             }
 
             return View(data);
