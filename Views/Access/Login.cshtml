@@ -117,20 +117,20 @@
 
     <script>
         document.getElementById("login-form").addEventListener("submit", function (event) {
-            // Prevent form submission
+            
             event.preventDefault();
 
-            // Hide login form after submission
+            
             this.style.display = "none";
 
-            // Display loading icon
+            
             document.getElementById("loading-icon").style.display = "block";
 
-            // Delay for 2 seconds before submitting the form
+            
             setTimeout(function () {
-                // Submit the form after 2 seconds
+                
                 document.getElementById("login-form").submit();
-            }, 2000); // 2000 milliseconds = 2 seconds
+            }, 2000); 
         });
     </script>
 
