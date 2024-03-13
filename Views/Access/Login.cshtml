@@ -57,7 +57,6 @@
 *@
 
 
-
 @model Intern_Admin_Collaboration.Models.IALogin;
 
 @{
@@ -73,6 +72,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/Style1.css">
 
+    <style>
+        #loading-icon {
+            font-size: 48px; /* Adjust the font size of the icon */
+            text-align: center;
+            margin-top: 20px; /* Adjust the spacing */
+        }
+    </style>
 </head>
 <body>
 
@@ -112,25 +118,18 @@
     </form>
 
     <div id="loading-icon" style="display: none;">
-        <i class="fas fa-spinner fa-spin"></i> Logging in...
+        <i class="fas fa-spinner fa-spin" style="font-size: 40px;"></i> <!-- Adjust the font size here too -->
+        <div style="font-size: 20px;">Logging in...</div> <!-- Adjust the font size of the text -->
     </div>
 
     <script>
         document.getElementById("login-form").addEventListener("submit", function (event) {
-            
             event.preventDefault();
-
-            
             this.style.display = "none";
-
-            
             document.getElementById("loading-icon").style.display = "block";
-
-            
             setTimeout(function () {
-                
                 document.getElementById("login-form").submit();
-            }, 2000); 
+            }, 8000);
         });
     </script>
 
