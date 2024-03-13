@@ -1,4 +1,4 @@
-﻿@model Intern_Admin_Collaboration.Models.IALogin;
+﻿@*@model Intern_Admin_Collaboration.Models.IALogin;
 
 @{
     Layout = null;
@@ -51,6 +51,88 @@
         }
 
     </form>
+
+</body>
+</html>
+*@
+
+
+
+@model Intern_Admin_Collaboration.Models.IALogin;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/Style1.css">
+
+</head>
+<body>
+
+    <form id="login-form" asp-controller="Access" asp-action="Login" method="post">
+        <div class="lock-icon">
+            <i class="fas fa-lock"></i>
+        </div>
+        <div class="login-text">
+            <h1>Login</h1>
+        </div>
+        <label>
+            <i class="fas fa-envelope"></i>
+            Email
+        </label>
+        <input type="email" placeholder="Email" asp-for="Email" /><br />
+        <label style="margin-top: 3px;">
+            <i class="fas fa-key"></i>
+            Password
+        </label>
+        <input type="password" placeholder="Password" asp-for="PassWord" />
+        <br /><br />
+        <label style="margin-bottom: 2px;">
+            <input type="checkbox" asp-for="KeepLoggedIn" name="remember" />
+            Keep me logged In.
+        </label>
+
+        <br />
+        <button style="margin-top: 0px;" type="submit">Login</button>
+
+        @if (ViewData["ValidateMessage"] != null)
+        {
+            <br />
+            <br />
+            <label>@ViewData["ValidateMessage"]</label>
+        }
+
+    </form>
+
+    <div id="loading-icon" style="display: none;">
+        <i class="fas fa-spinner fa-spin"></i> Logging in...
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function (event) {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Hide login form after submission
+            this.style.display = "none";
+
+            // Display loading icon
+            document.getElementById("loading-icon").style.display = "block";
+
+            // Delay for 2 seconds before submitting the form
+            setTimeout(function () {
+                // Submit the form after 2 seconds
+                document.getElementById("login-form").submit();
+            }, 2000); // 2000 milliseconds = 2 seconds
+        });
+    </script>
 
 </body>
 </html>
