@@ -1,63 +1,4 @@
-﻿@*@model Intern_Admin_Collaboration.Models.IALogin;
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
-    <link rel="stylesheet" href="css/Style1.css">
-
-</head>
-<body>
-    
-    <form asp-controller="Access" asp-action="Login" method="post">
-     
-        <div class="lock-icon">
-            <i class="fas fa-lock"></i>
-        </div>
-        <div class="login-text">
-            <h1>Login</h1>
-        </div>
-        <label>
-            <i class="fas fa-envelope"></i> 
-            Email
-        </label>
-        <input type="email" placeholder="Email" asp-for="Email" /><br />
-        <label style="margin-top: 3px;">
-            <i class="fas fa-key"></i> 
-            Password
-        </label>
-        <input type="password" placeholder="Password" asp-for="PassWord" />
-        <br /><br />
-        <label style="margin-bottom: 2px;">
-            <input type="checkbox" asp-for="KeepLoggedIn" name="remember" />
-                Keep me logged In.
-           </label>
-       
-        <br />
-        <button style="margin-top: 0px;" type="submit">Login</button>
-
-        @if (ViewData["ValidateMessage"] != null)
-        {
-            <br />
-            <br />
-            <label>@ViewData["ValidateMessage"]</label>
-        }
-
-    </form>
-
-</body>
-</html>
-*@
-
-
-
+﻿
 @model Intern_Admin_Collaboration.Models.IALogin;
 
 @{
@@ -73,6 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/Style1.css">
 
+    <style>
+        #loading-icon {
+            font-size: 48px; /* Adjust the font size of the icon */
+            text-align: center;
+            margin-top: 20px; /* Adjust the spacing */
+        }
+    </style>
 </head>
 <body>
 
@@ -87,15 +35,15 @@
             <i class="fas fa-envelope"></i>
             Email
         </label>
-        <input type="email" placeholder="Email" asp-for="Email" /><br />
+        <input id="email" type="email" placeholder="Email" asp-for="Email" /><br />
         <label style="margin-top: 3px;">
             <i class="fas fa-key"></i>
             Password
         </label>
-        <input type="password" placeholder="Password" asp-for="PassWord" />
+        <input id="password" type="password" placeholder="Password" asp-for="PassWord" />
         <br /><br />
         <label style="margin-bottom: 2px;">
-            <input type="checkbox" asp-for="KeepLoggedIn" name="remember" />
+            <input id="keepLoggedIn" type="checkbox" asp-for="KeepLoggedIn" name="remember" />
             Keep me logged In.
         </label>
 
@@ -112,25 +60,29 @@
     </form>
 
     <div id="loading-icon" style="display: none;">
-        <i class="fas fa-spinner fa-spin"></i> Logging in...
+        <i class="fas fa-spinner fa-spin" style="font-size: 40px;"></i> <!-- Adjust the font size here too -->
+        <div style="font-size: 20px;">Logging in...</div> <!-- Adjust the font size of the text -->
     </div>
 
     <script>
         document.getElementById("login-form").addEventListener("submit", function (event) {
-            
-            event.preventDefault();
+            var email = document.getElementById("email").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var keepLoggedIn = document.getElementById("keepLoggedIn").checked;
 
-            
-            this.style.display = "none";
-
-            
-            document.getElementById("loading-icon").style.display = "block";
-
-            
-            setTimeout(function () {
-                
-                document.getElementById("login-form").submit();
-            }, 2000); 
+            if (email === "" || password === "") {
+                event.preventDefault();
+                alert("Please provide both email and password.");
+            } else if (!keepLoggedIn) {
+                event.preventDefault();
+                alert("Please check the 'Keep me logged in' option.");
+            } else {
+                this.style.display = "none";
+                document.getElementById("loading-icon").style.display = "block";
+                setTimeout(function () {
+                    document.getElementById("login-form").submit();
+                }, 5000);
+            }
         });
     </script>
 
