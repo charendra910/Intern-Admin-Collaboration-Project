@@ -30,6 +30,8 @@ namespace Intern_Admin_Collaboration.Migrations.DashcontextMigrations
         {
             migrationBuilder.DropTable(
                 name: "DashboardIntern");
+
+                
         }
     }
 }
