@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Intern_Admin_Collaboration.Controllers
 {
-    [Authorize]                      //we can enter home only if we are logged in
+    [Authorize]                      //we can enter homepage only if we are logged in
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
