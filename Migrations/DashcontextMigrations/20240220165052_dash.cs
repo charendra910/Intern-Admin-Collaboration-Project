@@ -20,6 +20,8 @@ namespace Intern_Admin_Collaboration.Migrations.DashcontextMigrations
                     department = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     mobile = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
+
+                
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DashboardIntern", x => x.id);
