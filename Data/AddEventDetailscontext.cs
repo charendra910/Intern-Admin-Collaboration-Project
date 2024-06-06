@@ -10,6 +10,7 @@ namespace Intern_Admin_Collaboration.Data
         {
 
 
+
         }
 
         public DbSet<AddEventDetailsModel> AddEventDetails { get; set; }
