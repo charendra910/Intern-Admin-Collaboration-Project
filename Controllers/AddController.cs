@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Intern_Admin_Collaboration.Controllers
 {
+
     public class AddController : Controller
     {
         private Addcontext s1;
