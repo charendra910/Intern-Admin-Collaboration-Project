@@ -19,6 +19,7 @@ namespace Intern_Admin_Collaboration.Controllers
         {
             return View();
         }
+        
 
         //public IActionResult Showinterns ()
         //{
